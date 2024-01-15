@@ -68,6 +68,9 @@ async function loadFacts() {
     }
   );
   const data = await res.json();
+
+  // const filteredData = data.filter((fact) => fact.category === "technology");
+
   // console.log(data);
   createFactsList(data);
 }
@@ -83,11 +86,13 @@ function createFactsList(dataArray) {
         target="_blank"
         >(Source)</a>
       </p>
-      <span class="tag" style="background-color: #3b82f6" >${fact.category}</span>
+      <span class="tag" style="background-color: ${
+        CATEGORIES.find((cat) => cat.name === fact.category).color
+      }" >${fact.category}</span>
     </li>`
   );
 
-  console.log(htmlArr);
+  // console.log(htmlArr);
   const html = htmlArr.join("");
   factsList.insertAdjacentHTML("afterbegin", html);
 }
@@ -102,6 +107,12 @@ btn.addEventListener("click", function () {
     btn.textContent = "Share a fact";
   }
 });
+
+console.log([7, 64, 6, -23, 11].filter((el) => el > 10));
+
+console.log([7, 64, 6, -23, 11].find((el) => el > 10));
+
+// console.log(CATEGORIES.find((cat) => cat.name === "society").color);
 
 /* let votesInteresting = 23;
 let votesMindblowing = 5;
