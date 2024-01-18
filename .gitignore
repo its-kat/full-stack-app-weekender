@@ -10,7 +10,7 @@ logs
 
 node_modules
 bower_components
-v1/
+/v1/script.js
 
 *.sublime*
 
