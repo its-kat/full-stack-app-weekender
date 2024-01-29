@@ -12,6 +12,7 @@ node_modules
 bower_components
 /v1
 /src/supabase.js
+/build
 
 *.sublime*
 
